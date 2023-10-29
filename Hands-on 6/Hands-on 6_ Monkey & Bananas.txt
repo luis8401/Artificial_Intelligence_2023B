@@ -1,0 +1,78 @@
+; Declaración de hechos iniciales y metas
+
+(deftemplate State
+   (slot monkey (type SYMBOL))
+   (slot chair (type SYMBOL))
+   (slot desk (type SYMBOL))
+   (slot banana (type SYMBOL))
+   (slot on-chair (type SYMBOL))
+   (slot on-desk (type SYMBOL))
+   (slot on-banana (type SYMBOL))
+)
+
+(deftemplate Goal
+   (slot monkey (type SYMBOL))
+   (slot on-chair (type SYMBOL))
+   (slot on-desk (type SYMBOL))
+   (slot eat (type SYMBOL))
+   (slot on-monkey (type SYMBOL))
+)
+
+(defrule Initialize
+   (not (State (monkey ?m) (chair ?c) (desk ?d) (banana ?b)))
+   =>
+   (assert (State (monkey hungry) (chair chair) (desk desk) (banana banana) (on-chair floor) (on-desk floor) (on-banana ceiling)))
+   (assert (Goal (monkey happy) (on-chair desk) (on-desk floor) (eat monkey-banana) (on-monkey chair)))
+   (printout t "Initial state:" crlf)
+   (run)
+)
+
+(defrule MoveChairToDesk
+   (State (monkey hungry) (chair ?c) (desk ?d) (banana ?b) (on-chair floor) (on-desk floor) (on-banana ceiling))
+   =>
+   (assert (State (monkey hungry) (chair ?c) (desk ?d) (banana ?b) (on-chair desk) (on-desk desk) (on-banana ceiling)))
+   (printout t "Move the chair to the desk" crlf)
+   (printout t "Current state:" crlf)
+   (run)
+)
+
+(defrule ClimbChairAndDesk
+   (State (monkey hungry) (chair ?c) (desk ?d) (banana ?b) (on-chair desk) (on-desk desk) (on-banana ceiling))
+   =>
+   (assert (State (monkey hungry) (chair ?c) (desk ?d) (banana ?b) (on-chair chair) (on-desk desk) (on-banana ceiling)))
+   (printout t "Climb onto the chair and desk" crlf)
+   (printout t "Current state:" crlf)
+   (run)
+)
+
+(defrule GrabBanana
+   (State (monkey hungry) (chair ?c) (desk ?d) (banana ?b) (on-chair chair) (on-desk desk) (on-banana ceiling))
+   =>
+   (assert (State (monkey happy) (chair ?c) (desk ?d) (banana ?b) (on-chair chair) (on-desk desk) (on-banana desk)))
+   (assert (Goal (monkey happy) (on-chair chair) (on-desk desk) (eat monkey-banana) (on-monkey chair)))
+   (printout t "Grab the banana and eat it" crlf)
+   (printout t "Current state:" crlf)
+   (run)
+)
+
+(defrule Done
+   (Goal (monkey happy) (on-chair chair) (on-desk desk) (eat monkey-banana) (on-monkey chair))
+   =>
+   (printout t "Monkey is happy!" crlf)
+)
+
+(defrule Fail
+   (or (not (State (monkey happy)))
+       (not (Goal (monkey happy) (on-chair chair) (on-desk desk) (eat monkey-banana) (on-monkey chair))))
+   =>
+   (printout t "Failed to make the monkey happy." crlf)
+)
+
+(defrule Action
+   (State (monkey ?m) (chair ?c) (desk ?d) (banana ?b) (on-chair ?o) (on-desk ?p) (on-banana ?q))
+   =>
+   (printout t "The monkey is " ?m " and is " ?o " on the chair, " ?p " on the desk, and " ?q " on the banana" crlf)
+)
+
+(reset)
+(run)

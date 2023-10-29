@@ -1,0 +1,52 @@
+package Hands_On3;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class BFS {
+    private static final String ORIGIN = "NY";
+    private static final String DESTINATION = "LA";
+
+    private final ArrayList<ArrayList<String>> paths = new ArrayList<>();
+    private final Queue<ArrayList<String>> queue = new LinkedList<>();
+
+    public void startBFS() {
+        ArrayList<String> initialPath = new ArrayList<>();
+        initialPath.add(ORIGIN);
+        queue.add(initialPath);
+
+        while (!queue.isEmpty()) {
+            ArrayList<String> currentPath = queue.poll();
+            String currentCity = currentPath.get(currentPath.size() - 1);
+
+            if (currentCity.equals(DESTINATION)) {
+                paths.add(currentPath);
+            } else {
+                for (String[] connection : Cities.connections) {
+                    String from = connection[0];
+                    String to = connection[1];
+
+                    if (from.equals(currentCity) && !currentPath.contains(to)) {
+                        ArrayList<String> newPath = new ArrayList<>(currentPath);
+                        newPath.add(to);
+                        queue.add(newPath);
+                    }
+                }
+            }
+        }
+
+        printPaths();
+    }
+
+    private void printPaths() {
+        if (paths.isEmpty()) {
+            System.out.println("No se encontraron trayectorias de " + ORIGIN + " a " + DESTINATION);
+        } else {
+            System.out.println("Todas las trayectorias de " + ORIGIN + " a " + DESTINATION + " son:");
+            for (ArrayList<String> path : paths) {
+                System.out.println(path);
+            }
+        }
+    }
+}

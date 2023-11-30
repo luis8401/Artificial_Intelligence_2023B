@@ -1,7 +1,7 @@
 # Artificial_Intelligence_2023B
-Repositorio publico a peticion de tarea del profesor José Antonio Aviña Méndez para los Hands-on.
+Repositorio publico de tareas completadas y entregadas al profesor José Antonio Aviña Méndez para los Hands-on.
 UA Zapopan
-TecMM
+TecMM 30/11/2023
 
 Conformado por los siguientes Hands-on:
 # Hands-on 2 & 3
@@ -32,14 +32,14 @@ Conformado por los siguientes Hands-on:
     - Abstraer y modelar dicha técnica, orientada a objetos, a través de un Diagrama de Clases UML.
     - Implementar el modelo, orientado a objetos, a través de Java.
     - Emplear -por ejemplo-  el DataSet de caso Benetton. Ignorar la columna Year y emplear Sales y Advertising.
-    - Segmentar su DataSet 70%-30%.  Esto es, para calcular los valores óptimos de los parámetros del Modelo deben emplear el 70% de su DataSet. El 30% restante lo           emplearán para probar su modelo, esto es, para hacer predicciones.
-    - Realizar -al menos- dos veces el proceso de segmentación 70%-30%. Al final seleccionar como modelo los valores de los parámetros (B_0 y B_1) que  reporten el           Coeficiente de Determinación más alto.
+    - Segmentar su DataSet 70%-30%.  Esto es, para calcular los valores óptimos de los parámetros del Modelo deben emplear el 70% de su DataSet. El 30% restante lo emplearán para probar su modelo, esto es, para hacer predicciones.
+    - Realizar -al menos- dos veces el proceso de segmentación 70%-30%. Al final seleccionar como modelo los valores de los parámetros (B_0 y B_1) que  reporten el Coeficiente de Determinación más alto.
 # Hands-on 9
   A partir del Modelo Matemático de Análisis Predictivo, Multiple Linear Regression (Vectorizado), construido en clase:
     - Abstraer y modelar dicha técnica, orientada a objetos, a través de un Diagrama de Clases UML.
     - Implementar el modelo, orientado a objetos, a través de Java.
-    - Emplear -por ejemplo- el  DataSet 50 Startups & 17 Chemical Experiments para calcular los valores óptimos para los parámetros del Modelo Predictivo (Coeficientes       de Regresión):
+    - Emplear -por ejemplo- el  DataSet 50 Startups & 17 Chemical Experiments para calcular los valores óptimos para los parámetros del Modelo Predictivo (Coeficientes de Regresión):
     - Variables endógena: Profit
     - Variables exógenas: Administration, R&D Spend & Marketing Spend
-    - Segmentar su DataSet 70%-30%.  Esto es, para calcular los valores óptimos de los parámetros del Modelo deben emplear el 70% de su DataSet. El 30% restante lo           emplearán para probar su modelo, esto es, para hacer predicciones.
-    - Realizar -al menos- dos veces el proceso de segmentación 70%-30%. Al final seleccionar como modelo los valores de los parámetros que  reporten el Coeficiente de        Determinación más alto.
+    - Segmentar su DataSet 70%-30%.  Esto es, para calcular los valores óptimos de los parámetros del Modelo deben emplear el 70% de su DataSet. El 30% restante lo emplearán para probar su modelo, esto es, para hacer predicciones.
+    - Realizar -al menos- dos veces el proceso de segmentación 70%-30%. Al final seleccionar como modelo los valores de los parámetros que  reporten el Coeficiente de Determinación más alto.

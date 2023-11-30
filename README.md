@@ -27,12 +27,19 @@ Conformado por los siguientes Hands-on:
   Implementar un Sistema Basado en Reglas -en CLIPS- para que: 
     - Construya el plan para resolver el problema.
     - Imprima en pantalla dicho Plan que consiste en el orden lógico acciones que el mono debe realizar. 
-# Hands-on 7
-  Analizar y  comprender el problema, clásico en Inteligencia Artificial, conocido como The Blocks World.
-  Implementar un Sistema Basado en Reglas -en CLIPS- para que dado un Orden  inicial (Estado inicial) de cubos,  se produzca -a través de un conjunto de acciones- un     Orden  final de los mismos (Estado final).
-  Para modelar el problema se deben emplear los siguientes objetos:
-    - Un brazo robótico
-    - Una mesa 
-    - Al menos cuatro bloques etiquetados (A, B, C y D).
-  El sistema debe ser capaz de construir un plan -e imprimirlo en pantalla- para transitar desde cualquier Orden inicial hacia el respectivo Orden final.
-  Se anexan en Google Classroom ejemplos tanto de un Estado Inicial como el respectivo  Estado Final en un problema dado.
+# Hands-on 8
+  A partir del Modelo Matemático de Análisis Predictivo, Simple Linear Regression, construido en clase:
+    - Abstraer y modelar dicha técnica, orientada a objetos, a través de un Diagrama de Clases UML.
+    - Implementar el modelo, orientado a objetos, a través de Java.
+    - Emplear -por ejemplo-  el DataSet de caso Benetton. Ignorar la columna Year y emplear Sales y Advertising.
+    - Segmentar su DataSet 70%-30%.  Esto es, para calcular los valores óptimos de los parámetros del Modelo deben emplear el 70% de su DataSet. El 30% restante lo           emplearán para probar su modelo, esto es, para hacer predicciones.
+    - Realizar -al menos- dos veces el proceso de segmentación 70%-30%. Al final seleccionar como modelo los valores de los parámetros (B_0 y B_1) que  reporten el           Coeficiente de Determinación más alto.
+# Hands-on 9
+  A partir del Modelo Matemático de Análisis Predictivo, Multiple Linear Regression (Vectorizado), construido en clase:
+    - Abstraer y modelar dicha técnica, orientada a objetos, a través de un Diagrama de Clases UML.
+    - Implementar el modelo, orientado a objetos, a través de Java.
+    - Emplear -por ejemplo- el  DataSet 50 Startups & 17 Chemical Experiments para calcular los valores óptimos para los parámetros del Modelo Predictivo (Coeficientes       de Regresión):
+    - Variables endógena: Profit
+    - Variables exógenas: Administration, R&D Spend & Marketing Spend
+    - Segmentar su DataSet 70%-30%.  Esto es, para calcular los valores óptimos de los parámetros del Modelo deben emplear el 70% de su DataSet. El 30% restante lo           emplearán para probar su modelo, esto es, para hacer predicciones.
+    - Realizar -al menos- dos veces el proceso de segmentación 70%-30%. Al final seleccionar como modelo los valores de los parámetros que  reporten el Coeficiente de        Determinación más alto.
